@@ -40,6 +40,18 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 group relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#0066ff]/50 hover:bg-[var(--color-bg-surface)] flex flex-col justify-between"
           >
+            {/* Conference Photo Banner — shown at top of card when image is available */}
+            {PUBLICATION.image && (
+              <div className="absolute top-0 left-0 right-0 h-36 overflow-hidden rounded-t-3xl pointer-events-none">
+                <img
+                  src={PUBLICATION.image}
+                  alt="Conference presentation"
+                  className="w-full h-full object-cover opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--color-bg-elevated)]" />
+              </div>
+            )}
+
             {/* Top Glow */}
             <div
               className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
@@ -49,7 +61,7 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
               }}
             />
 
-            <div>
+            <div className={PUBLICATION.image ? 'pt-28 relative' : 'relative'}>
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                 <div className="flex items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0066ff]/15 px-3 py-1 font-mono text-xs font-semibold text-[#0066ff] border border-[#0066ff]/30">
@@ -61,7 +73,7 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
                   </span>
                 </div>
 
-                {PUBLICATION.photoPlaceholderNote && (
+                {!PUBLICATION.image && PUBLICATION.photoPlaceholderNote && (
                   <button
                     onClick={onOpenPhotoGuidance}
                     className="flex items-center gap-1 rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[10px] text-[#888888] hover:text-white"

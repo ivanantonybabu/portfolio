@@ -63,6 +63,18 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                 transition={{ delay: idx * 0.08, duration: 0.5 }}
                 className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#0066ff]/50 hover:bg-[var(--color-bg-surface)] ${spanClass}`}
               >
+                {/* Background Photo (when provided) */}
+                {project.image && (
+                  <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt=""
+                      className="w-full h-full object-cover opacity-15 group-hover:opacity-25 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-elevated)] via-[var(--color-bg-elevated)]/60 to-transparent" />
+                  </div>
+                )}
+
                 {/* Radial Glow */}
                 <div
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
@@ -86,7 +98,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                     </div>
 
                     <div className="flex items-center gap-2">
-                      {project.photoPlaceholderNote && (
+                      {!project.image && project.photoPlaceholderNote && (
                         <button
                           onClick={(e) => {
                             e.stopPropagation();

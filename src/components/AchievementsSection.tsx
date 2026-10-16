@@ -37,6 +37,18 @@ export const AchievementsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
             transition={{ delay: idx * 0.08, duration: 0.4 }}
             className="group relative flex h-[240px] w-[280px] sm:w-[320px] flex-shrink-0 flex-col justify-end overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#0066ff]/40 hover:bg-[var(--color-bg-surface)]"
           >
+            {/* Background Photo (when provided) */}
+            {item.image && (
+              <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt=""
+                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-elevated)] via-[var(--color-bg-elevated)]/70 to-transparent" />
+              </div>
+            )}
+
             {/* Radial glow on hover */}
             <div
               className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -46,13 +58,15 @@ export const AchievementsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
               }}
             />
 
-            {/* Subtle tech background grid/icon */}
-            <div className="absolute top-6 right-6 text-white/5 group-hover:text-[#0066ff]/20 transition-colors">
-              <Award className="w-16 h-16 stroke-1" />
-            </div>
+            {/* Subtle tech background grid/icon — hidden when photo is present */}
+            {!item.image && (
+              <div className="absolute top-6 right-6 text-white/5 group-hover:text-[#0066ff]/20 transition-colors">
+                <Award className="w-16 h-16 stroke-1" />
+              </div>
+            )}
 
-            {/* Photo slot badge if placeholder available */}
-            {item.photoPlaceholderNote && (
+            {/* Photo slot badge — only shown when NO image is set yet */}
+            {!item.image && item.photoPlaceholderNote && (
               <button
                 onClick={onOpenPhotoGuidance}
                 className="absolute top-4 left-4 z-20 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/40 px-2 py-0.5 font-mono text-[9px] text-[#888888] backdrop-blur hover:text-white transition-colors"
