@@ -85,8 +85,8 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/ivan-antony-babu-530265280",
   instagram: "https://www.instagram.com/ivan_antony_babu",
   googleScholar: "https://scholar.google.com",
-  resumePath: "/resume.pdf",
-  profilePhoto: "/profile.jpg",
+  resumePath: "./resume.pdf",
+  profilePhoto: "./profile.jpg",
   availability: "Available for Engineering Roles & Research",
   bioHeadline: "I design, build, and deploy intelligent autonomous systems — from real-time visual-inertial SLAM on edge compute to adaptive anti-jamming wireless modems.",
   bioDescription: "I bridge the gap between low-level hardware constraints and high-level algorithmic intelligence. With a dual-degree background in Electronics & Communications (CUSAT) and Data Science (IIT Madras), I combine robotics engineering, DSP, and machine learning to build resilient systems for GPS-denied environments and complex wireless channels."
@@ -467,14 +467,14 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "AWS — DevTown",
     year: "2023",
     badge: "Certified",
-    image: "/aws-certificate.jpg"
+    image: "./aws-certificate.jpg"
   },
   {
     title: "VLSI SoC Design using Verilog HDL",
     issuer: "Maven Silicon",
     year: "2023",
     badge: "Certified",
-    image: "/vlsi.png"
+    image: "./vlsi.png"
   }
 ];
 
