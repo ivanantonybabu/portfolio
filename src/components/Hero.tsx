@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Clock, ArrowDown, Sparkles } from 'lucide-react';
+import { MapPin, Clock } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { DroneHeroVisual } from './DroneHeroVisual';
 
 export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCommandPalette }) => {
   const [istTime, setIstTime] = useState('');
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
   // Real-time IST clock
   useEffect(() => {
@@ -25,18 +25,6 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
     return () => clearInterval(interval);
   }, []);
 
-  // 3D Portrait tilt on mouse move
-  const handlePortraitMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setTilt({ x: x * 18, y: -y * 18 });
-  };
-
-  const handlePortraitMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
-  };
-
   const scrollToAbout = () => {
     const el = document.getElementById('about');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -54,7 +42,7 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
       />
 
       <div className="relative z-10 flex flex-1 flex-col justify-center my-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] items-center gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] items-center gap-12 lg:gap-8">
           {/* Left Column: Monumental Kinetic Typography */}
           <div className="flex flex-col">
             {/* Top Sub-tag */}
@@ -68,8 +56,8 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
                 Portfolio // 2026
               </span>
               <span className="h-px w-12 bg-[#38bdf8]/40"></span>
-              <span className="hidden sm:inline font-mono text-[11px] text-[#888888]">
-                Robotics • Embedded • SDR
+              <span className="hidden sm:inline font-mono text-[11px] text-[#8b949e]">
+                Robotics • Autonomous UAVs • SDR
               </span>
             </motion.div>
 
@@ -101,9 +89,9 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="hidden md:inline-block font-sans text-xs sm:text-sm font-medium tracking-wider text-[#888888] uppercase translate-y-[-0.2em]"
+                  className="hidden md:inline-block font-sans text-xs sm:text-sm font-medium tracking-wider text-[#8b949e] uppercase translate-y-[-0.2em]"
                 >
-                  — Robotics & Embedded Engineer
+                  — Robotics &amp; Embedded Engineer
                 </motion.span>
               </div>
 
@@ -113,7 +101,7 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
                   initial={{ y: '100%' }}
                   animate={{ y: '0%' }}
                   transition={{ duration: 0.6, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-clash text-[clamp(2.8rem,8vw,7.2rem)] font-light tracking-tighter text-[#38bdf8] leading-[0.95] drop-shadow-[0_0_35px_rgba(0,102,255,0.25)]"
+                  className="font-clash text-[clamp(2.8rem,8vw,7.2rem)] font-light tracking-tighter text-[#38bdf8] leading-[0.95] drop-shadow-[0_0_35px_rgba(56,189,248,0.25)]"
                 >
                   BABU
                 </motion.h1>
@@ -139,7 +127,7 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
               <span className="text-[var(--color-text-primary)] font-medium underline decoration-[#38bdf8]/40 underline-offset-4">
                 Software-Defined Radio
               </span>
-              . Dual-degree engineer from CUSAT & IIT Madras.
+              . Dual-degree engineer from CUSAT &amp; IIT Madras.
             </motion.div>
 
             {/* Meta Badges Row */}
@@ -161,84 +149,26 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
                 </span>
-                <span>Open for Research & Roles</span>
+                <span>Open for Research &amp; Roles</span>
               </div>
 
               {/* Live IST Clock */}
               <div className="flex items-center gap-2 font-mono text-xs text-[var(--color-text-secondary)]">
-                <Clock className="h-3.5 w-3.5 text-[#888888]" />
+                <Clock className="h-3.5 w-3.5 text-[#8b949e]" />
                 <span className="tabular-nums">{istTime || '19:59'} IST</span>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column: 3D Interactive Tilt Portrait Card */}
+          {/* Right Column: Interactive Autonomous Drone & LiDAR SLAM Simulator */}
           <div className="flex items-center justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-              style={{ perspective: 1000 }}
-              onMouseMove={handlePortraitMouseMove}
-              onMouseLeave={handlePortraitMouseLeave}
+              className="w-full flex justify-center lg:justify-end"
             >
-              {/* Conic Glow Backing */}
-              <div
-                className="absolute inset-[-15%] -z-10 opacity-60 blur-3xl transition-all duration-700 pointer-events-none"
-                style={{
-                  background:
-                    'conic-gradient(from 0deg, rgba(56, 189, 248, 0.4), rgba(0, 200, 255, 0.15), rgba(70, 0, 255, 0.25), rgba(56, 189, 248, 0.4))',
-                  borderRadius: '35%',
-                }}
-              />
-
-              {/* 3D Tilted Card Container */}
-              <motion.div
-                className="relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-2 shadow-2xl transition-transform duration-150 ease-out"
-                style={{
-                  transform: `rotateY(${tilt.x}deg) rotateX(${tilt.y}deg)`,
-                  transformStyle: 'preserve-3d',
-                }}
-              >
-                {/* Image Wrapper */}
-                <div className="relative aspect-[3/4] w-64 sm:w-72 md:w-80 overflow-hidden rounded-2xl bg-[#141414]">
-                  <img
-                    src={PERSONAL_INFO.profilePhoto}
-                    alt={PERSONAL_INFO.name}
-                    className="h-full w-full object-cover object-center filter contrast-105 brightness-95 transition-transform duration-700 hover:scale-105"
-                    onError={(e) => {
-                      // Fallback if image path has issue
-                      (e.target as HTMLElement).style.display = 'none';
-                    }}
-                  />
-
-                  {/* Gradient overlays */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_60%_70%,rgba(0,102,255,0.18),transparent_65%)]" />
-
-                  {/* Bottom badge on photo */}
-                  <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between rounded-xl border border-white/10 bg-black/60 px-3 py-2 backdrop-blur-md">
-                    <div>
-                      <div className="font-clash text-xs font-semibold text-white">
-                        {PERSONAL_INFO.name}
-                      </div>
-                      <div className="font-mono text-[10px] text-[#38bdf8]">
-                        IIT Tirupati STAR-PNT Fellow
-                      </div>
-                    </div>
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#38bdf8]/20 text-[#38bdf8]">
-                      <Sparkles className="h-3.5 w-3.5" />
-                    </span>
-                  </div>
-                </div>
-
-                {/* Subtle corner tech accent */}
-                <div className="absolute top-4 right-4 h-6 w-6 pointer-events-none opacity-40">
-                  <div className="absolute top-0 right-0 h-full w-px bg-[#38bdf8]" />
-                  <div className="absolute top-0 right-0 h-px w-full bg-[#38bdf8]" />
-                </div>
-              </motion.div>
+              <DroneHeroVisual />
             </motion.div>
           </div>
         </div>
