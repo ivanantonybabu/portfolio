@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="hidden lg:flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 font-sans text-xs text-white/80 transition-colors hover:border-white/40 hover:text-white"
             title="View photo placement guidance"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066ff]"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8]"></span>
             <span className="text-[11px] font-mono">Photos Info</span>
           </button>
 
@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 font-sans text-xs text-white/90 transition-colors hover:border-white/50 hover:text-white"
           >
-            <FileText className="w-3.5 h-3.5 text-[#0066ff]" />
+            <FileText className="w-3.5 h-3.5 text-[#38bdf8]" />
             <span className="hidden md:inline text-xs font-mono uppercase tracking-wider">CV</span>
           </a>
 
@@ -163,9 +163,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <button
                     onClick={() => handleNavClick(item.href)}
-                    className="group flex items-baseline gap-4 text-left font-clash text-4xl font-semibold text-[#f5f5f5] transition-colors hover:text-[#0066ff] md:text-6xl lg:text-7xl"
+                    className="group flex items-baseline gap-4 text-left font-clash text-4xl font-semibold text-[#f5f5f5] transition-colors hover:text-[#38bdf8] md:text-6xl lg:text-7xl"
                   >
-                    <span className="font-mono text-xs text-[#666666] group-hover:text-[#0066ff] transition-colors">
+                    <span className="font-mono text-xs text-[#666666] group-hover:text-[#38bdf8] transition-colors">
                       0{idx + 1}
                     </span>
                     <span>{item.label}</span>

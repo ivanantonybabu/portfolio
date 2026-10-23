@@ -11,7 +11,7 @@ export const EducationCertifications: React.FC = () => {
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-2">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#38bdf8]">
             06 // Academic Background & Certifications
           </span>
         </div>
@@ -30,11 +30,11 @@ export const EducationCertifications: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="group relative flex flex-col justify-between rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-300 hover:border-[#0066ff]/40 hover:bg-[var(--color-bg-surface)]"
+              className="group relative flex flex-col justify-between rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-300 hover:border-[#38bdf8]/40 hover:bg-[var(--color-bg-surface)]"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0066ff]/10 text-[#0066ff]">
+                  <div className="p-2.5 rounded-xl bg-[#38bdf8]/10 text-[#38bdf8]">
                     <GraduationCap className="w-5 h-5" />
                   </div>
                   <span className="font-mono text-xs text-[var(--color-text-tertiary)]">
@@ -42,10 +42,10 @@ export const EducationCertifications: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="font-clash text-lg md:text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[#0066ff] transition-colors leading-tight">
+                <h3 className="font-clash text-lg md:text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[#38bdf8] transition-colors leading-tight">
                   {edu.institution}
                 </h3>
-                <p className="mt-2 font-mono text-xs text-[#0066ff]">
+                <p className="mt-2 font-mono text-xs text-[#38bdf8]">
                   {edu.degree}
                 </p>
 
@@ -77,7 +77,7 @@ export const EducationCertifications: React.FC = () => {
                 <span className="font-mono text-xs text-[var(--color-text-tertiary)]">
                   {edu.scoreType}
                 </span>
-                <span className="font-clash text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[#0066ff] transition-colors">
+                <span className="font-clash text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[#38bdf8] transition-colors">
                   {edu.score}
                 </span>
               </div>
@@ -88,7 +88,7 @@ export const EducationCertifications: React.FC = () => {
         {/* Certifications Sub-section */}
         <div>
           <div className="flex items-center gap-4 mb-6">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#0066ff]">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#38bdf8]">
               Professional Accreditations
             </span>
             <span className="h-px flex-1 bg-[var(--color-border)]" />
@@ -103,7 +103,7 @@ export const EducationCertifications: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.4 }}
                 onClick={() => cert.image && setSelectedCert(cert)}
-                className={`group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-5 transition-all duration-300 hover:border-[#0066ff]/40 hover:bg-[var(--color-bg-surface)] flex flex-col justify-between ${
+                className={`group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-5 transition-all duration-300 hover:border-[#38bdf8]/40 hover:bg-[var(--color-bg-surface)] flex flex-col justify-between ${
                   cert.image ? 'cursor-pointer' : ''
                 }`}
               >
@@ -112,12 +112,12 @@ export const EducationCertifications: React.FC = () => {
                     <span className="font-mono text-[11px] text-[var(--color-text-tertiary)]">
                       {cert.year}
                     </span>
-                    <span className="rounded-full bg-[#0066ff]/10 px-2 py-0.5 font-mono text-[10px] text-[#0066ff] border border-[#0066ff]/20">
+                    <span className="rounded-full bg-[#38bdf8]/10 px-2 py-0.5 font-mono text-[10px] text-[#38bdf8] border border-[#38bdf8]/20">
                       {cert.badge}
                     </span>
                   </div>
 
-                  <h4 className="font-clash text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-[#0066ff] transition-colors">
+                  <h4 className="font-clash text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-[#38bdf8] transition-colors">
                     {cert.title}
                   </h4>
                   <p className="mt-1 font-mono text-xs text-[var(--color-text-secondary)]">
@@ -127,14 +127,14 @@ export const EducationCertifications: React.FC = () => {
 
                 <div className="mt-4 pt-3 border-t border-[var(--color-border)]/50 flex items-center justify-between text-[11px] font-mono text-[var(--color-text-tertiary)]">
                   {cert.image ? (
-                    <span className="text-[#0066ff] flex items-center gap-1 group-hover:underline">
+                    <span className="text-[#38bdf8] flex items-center gap-1 group-hover:underline">
                       <Eye className="w-3 h-3" />
                       <span>View Credential</span>
                     </span>
                   ) : (
                     <span>Verified</span>
                   )}
-                  <span className="text-[#0066ff]">→</span>
+                  <span className="text-[#38bdf8]">→</span>
                 </div>
               </motion.div>
             ))}
@@ -162,7 +162,7 @@ export const EducationCertifications: React.FC = () => {
               <h3 className="font-clash text-xl font-bold mb-1">
                 {selectedCert.title}
               </h3>
-              <p className="font-mono text-xs text-[#0066ff] mb-4">
+              <p className="font-mono text-xs text-[#38bdf8] mb-4">
                 {selectedCert.issuer} • {selectedCert.year}
               </p>
 
@@ -177,7 +177,7 @@ export const EducationCertifications: React.FC = () => {
               <div className="mt-4 flex justify-end">
                 <button
                   onClick={() => setSelectedCert(null)}
-                  className="rounded-xl bg-[#0066ff] px-4 py-2 font-mono text-xs text-white"
+                  className="rounded-xl bg-[#38bdf8] px-4 py-2 font-mono text-xs text-white"
                 >
                   Close Preview
                 </button>

@@ -112,7 +112,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             onClose();
           },
           tag: 'PDF',
-          icon: <FileText className="w-4 h-4 text-[#0066ff]" />,
+          icon: <FileText className="w-4 h-4 text-[#38bdf8]" />,
         },
         {
           label: 'Toggle Visual Theme (Light/Dark)',
@@ -129,7 +129,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             onOpenPhotoGuidance();
           },
           tag: 'Info',
-          icon: <ImageIcon className="w-4 h-4 text-[#0066ff]" />,
+          icon: <ImageIcon className="w-4 h-4 text-[#38bdf8]" />,
         },
       ],
     },
@@ -152,7 +152,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             onClose();
           },
           tag: 'External',
-          icon: <Linkedin className="w-4 h-4 text-[#0066ff]" />,
+          icon: <Linkedin className="w-4 h-4 text-[#38bdf8]" />,
         },
       ],
     },
@@ -182,7 +182,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       >
         {/* Search Input Bar */}
         <div className="flex items-center gap-3 border-b border-[var(--color-border)] px-5 py-4">
-          <Search className="h-5 w-5 text-[#0066ff]" />
+          <Search className="h-5 w-5 text-[#38bdf8]" />
           <input
             type="text"
             autoFocus
@@ -215,18 +215,18 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   <button
                     key={iIdx}
                     onClick={item.action}
-                    className="w-full flex items-center justify-between rounded-xl px-3 py-2.5 text-left font-sans text-xs sm:text-sm text-[var(--color-text-primary)] hover:bg-[#0066ff]/10 hover:text-[#0066ff] transition-colors group"
+                    className="w-full flex items-center justify-between rounded-xl px-3 py-2.5 text-left font-sans text-xs sm:text-sm text-[var(--color-text-primary)] hover:bg-[#38bdf8]/10 hover:text-[#38bdf8] transition-colors group"
                   >
                     <div className="flex items-center gap-3">
                       {item.icon && (
-                        <span className="text-[var(--color-text-secondary)] group-hover:text-[#0066ff]">
+                        <span className="text-[var(--color-text-secondary)] group-hover:text-[#38bdf8]">
                           {item.icon}
                         </span>
                       )}
                       <span>{item.label}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-[10px] text-[var(--color-text-tertiary)] group-hover:text-[#0066ff]">
+                      <span className="font-mono text-[10px] text-[var(--color-text-tertiary)] group-hover:text-[#38bdf8]">
                         {item.tag}
                       </span>
                       <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />

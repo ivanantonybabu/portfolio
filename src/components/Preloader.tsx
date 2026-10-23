@@ -79,11 +79,11 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
               <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#888888]">
                 Robotics
               </span>
-              <span className="text-[#0066ff] font-sans text-xs">•</span>
+              <span className="text-[#38bdf8] font-sans text-xs">•</span>
               <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#888888]">
                 Embedded
               </span>
-              <span className="text-[#0066ff] font-sans text-xs">•</span>
+              <span className="text-[#38bdf8] font-sans text-xs">•</span>
               <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#888888]">
                 SDR
               </span>
@@ -93,7 +93,7 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
             <div className="flex items-center gap-4">
               <div className="relative h-[2px] w-40 overflow-hidden bg-[#222222] md:w-56">
                 <motion.div
-                  className="absolute inset-0 origin-left bg-[#0066ff]"
+                  className="absolute inset-0 origin-left bg-[#38bdf8]"
                   style={{ transform: `scaleX(${count / 100})` }}
                 />
               </div>

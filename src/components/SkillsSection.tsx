@@ -7,8 +7,8 @@ const SkillPill: React.FC<{ skill: string; highlight?: boolean }> = ({ skill, hi
   <span
     className={`flex-shrink-0 rounded-full border px-4 py-2 font-mono text-xs transition-all duration-300 select-none cursor-default
       ${highlight
-        ? 'border-[#0066ff]/60 bg-[#0066ff]/10 text-[#0066ff]'
-        : 'border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:border-[#0066ff]/60 hover:text-[#0066ff] hover:bg-[#0066ff]/10'
+        ? 'border-[#38bdf8]/60 bg-[#38bdf8]/10 text-[#38bdf8]'
+        : 'border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:border-[#38bdf8]/60 hover:text-[#38bdf8] hover:bg-[#38bdf8]/10'
       }`}
   >
     {skill}
@@ -17,7 +17,7 @@ const SkillPill: React.FC<{ skill: string; highlight?: boolean }> = ({ skill, hi
 
 /* ─── category label chip ───────────────────────────────────────── */
 const CategoryChip: React.FC<{ symbol: string; title: string }> = ({ symbol, title }) => (
-  <span className="flex-shrink-0 flex items-center gap-1.5 rounded-full border border-[#0066ff]/40 bg-[#0066ff]/10 px-4 py-2 font-mono text-xs font-semibold text-[#0066ff] select-none cursor-default">
+  <span className="flex-shrink-0 flex items-center gap-1.5 rounded-full border border-[#38bdf8]/40 bg-[#38bdf8]/10 px-4 py-2 font-mono text-xs font-semibold text-[#38bdf8] select-none cursor-default">
     <span>{symbol}</span>
     <span>{title}</span>
   </span>
@@ -40,7 +40,7 @@ export const SkillsSection: React.FC = () => {
         transition={{ duration: 0.55 }}
         className="px-4 md:px-8 lg:px-12 mb-12"
       >
-        <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
+        <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#38bdf8]">
           02 // Technical Skills &amp; Stack
         </span>
         <h2 className="mt-4 font-clash text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[var(--color-text-primary)] max-w-3xl">
@@ -98,26 +98,26 @@ export const SkillsSection: React.FC = () => {
         className="mx-4 md:mx-8 lg:mx-12 mt-10 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
       >
         <div className="space-y-1">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#0066ff]">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#38bdf8]">
             Languages &amp; Operating Systems
           </span>
           <div className="flex flex-wrap gap-2 pt-1 font-clash text-sm font-medium text-[var(--color-text-primary)]">
-            <span>Python</span><span className="text-[#0066ff]">•</span>
-            <span>C++</span><span className="text-[#0066ff]">•</span>
-            <span>C</span><span className="text-[#0066ff]">•</span>
-            <span>Java</span><span className="text-[#0066ff]">•</span>
-            <span>Linux (Ubuntu/Debian)</span><span className="text-[#0066ff]">•</span>
+            <span>Python</span><span className="text-[#38bdf8]">•</span>
+            <span>C++</span><span className="text-[#38bdf8]">•</span>
+            <span>C</span><span className="text-[#38bdf8]">•</span>
+            <span>Java</span><span className="text-[#38bdf8]">•</span>
+            <span>Linux (Ubuntu/Debian)</span><span className="text-[#38bdf8]">•</span>
             <span>Windows</span>
           </div>
         </div>
 
         <div className="space-y-1">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#0066ff]">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#38bdf8]">
             Linguistic Proficiency
           </span>
           <div className="flex flex-wrap gap-2 pt-1 font-mono text-xs text-[var(--color-text-secondary)]">
             <span>English (Professional)</span>
-            <span className="text-[#0066ff]">•</span>
+            <span className="text-[#38bdf8]">•</span>
             <span>Malayalam (Bilingual / Native)</span>
           </div>
         </div>

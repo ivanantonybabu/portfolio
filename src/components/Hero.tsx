@@ -49,7 +49,7 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
         className="pointer-events-none absolute inset-0 z-0"
         style={{
           background:
-            'radial-gradient(ellipse 70% 55% at 70% 40%, rgba(0, 102, 255, 0.08), transparent 70%)',
+            'radial-gradient(ellipse 70% 55% at 70% 40%, rgba(56, 189, 248, 0.08), transparent 70%)',
         }}
       />
 
@@ -64,10 +64,10 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
               transition={{ duration: 0.6 }}
               className="mb-4 flex items-center gap-3"
             >
-              <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#38bdf8]">
                 Portfolio // 2026
               </span>
-              <span className="h-px w-12 bg-[#0066ff]/40"></span>
+              <span className="h-px w-12 bg-[#38bdf8]/40"></span>
               <span className="hidden sm:inline font-mono text-[11px] text-[#888888]">
                 Robotics • Embedded • SDR
               </span>
@@ -113,7 +113,7 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
                   initial={{ y: '100%' }}
                   animate={{ y: '0%' }}
                   transition={{ duration: 0.6, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-clash text-[clamp(2.8rem,8vw,7.2rem)] font-light tracking-tighter text-[#0066ff] leading-[0.95] drop-shadow-[0_0_35px_rgba(0,102,255,0.25)]"
+                  className="font-clash text-[clamp(2.8rem,8vw,7.2rem)] font-light tracking-tighter text-[#38bdf8] leading-[0.95] drop-shadow-[0_0_35px_rgba(0,102,255,0.25)]"
                 >
                   BABU
                 </motion.h1>
@@ -128,15 +128,15 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
               className="mt-6 md:mt-8 max-w-2xl font-sans text-base sm:text-lg text-[var(--color-text-secondary)] leading-relaxed"
             >
               Designing and implementing hardware-software systems across{' '}
-              <span className="text-[var(--color-text-primary)] font-medium underline decoration-[#0066ff]/40 underline-offset-4">
+              <span className="text-[var(--color-text-primary)] font-medium underline decoration-[#38bdf8]/40 underline-offset-4">
                 Visual-Inertial SLAM
               </span>
               ,{' '}
-              <span className="text-[var(--color-text-primary)] font-medium underline decoration-[#0066ff]/40 underline-offset-4">
+              <span className="text-[var(--color-text-primary)] font-medium underline decoration-[#38bdf8]/40 underline-offset-4">
                 Autonomous UAVs
               </span>
               , and{' '}
-              <span className="text-[var(--color-text-primary)] font-medium underline decoration-[#0066ff]/40 underline-offset-4">
+              <span className="text-[var(--color-text-primary)] font-medium underline decoration-[#38bdf8]/40 underline-offset-4">
                 Software-Defined Radio
               </span>
               . Dual-degree engineer from CUSAT & IIT Madras.
@@ -151,7 +151,7 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
             >
               {/* Location */}
               <div className="flex items-center gap-2 font-mono text-xs text-[var(--color-text-secondary)]">
-                <MapPin className="h-3.5 w-3.5 text-[#0066ff]" />
+                <MapPin className="h-3.5 w-3.5 text-[#38bdf8]" />
                 <span>Kochi, Kerala, India</span>
               </div>
 
@@ -188,7 +188,7 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
                 className="absolute inset-[-15%] -z-10 opacity-60 blur-3xl transition-all duration-700 pointer-events-none"
                 style={{
                   background:
-                    'conic-gradient(from 0deg, rgba(0, 102, 255, 0.4), rgba(0, 200, 255, 0.15), rgba(70, 0, 255, 0.25), rgba(0, 102, 255, 0.4))',
+                    'conic-gradient(from 0deg, rgba(56, 189, 248, 0.4), rgba(0, 200, 255, 0.15), rgba(70, 0, 255, 0.25), rgba(56, 189, 248, 0.4))',
                   borderRadius: '35%',
                 }}
               />
@@ -223,11 +223,11 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
                       <div className="font-clash text-xs font-semibold text-white">
                         {PERSONAL_INFO.name}
                       </div>
-                      <div className="font-mono text-[10px] text-[#0066ff]">
+                      <div className="font-mono text-[10px] text-[#38bdf8]">
                         IIT Tirupati STAR-PNT Fellow
                       </div>
                     </div>
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#0066ff]/20 text-[#0066ff]">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#38bdf8]/20 text-[#38bdf8]">
                       <Sparkles className="h-3.5 w-3.5" />
                     </span>
                   </div>
@@ -235,8 +235,8 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
 
                 {/* Subtle corner tech accent */}
                 <div className="absolute top-4 right-4 h-6 w-6 pointer-events-none opacity-40">
-                  <div className="absolute top-0 right-0 h-full w-px bg-[#0066ff]" />
-                  <div className="absolute top-0 right-0 h-px w-full bg-[#0066ff]" />
+                  <div className="absolute top-0 right-0 h-full w-px bg-[#38bdf8]" />
+                  <div className="absolute top-0 right-0 h-px w-full bg-[#38bdf8]" />
                 </div>
               </motion.div>
             </motion.div>
@@ -261,12 +261,12 @@ export const Hero: React.FC<{ onOpenCommandPalette: () => void }> = ({ onOpenCom
           className="group flex flex-col items-center gap-2 focus:outline-none"
           aria-label="Scroll to about section"
         >
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--color-text-tertiary)] group-hover:text-[#0066ff] transition-colors">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--color-text-tertiary)] group-hover:text-[#38bdf8] transition-colors">
             Scroll
           </span>
           <div className="relative h-10 w-[1px] overflow-hidden bg-[var(--color-border)]">
             <motion.div
-              className="absolute inset-0 origin-top bg-[#0066ff]"
+              className="absolute inset-0 origin-top bg-[#38bdf8]"
               animate={{ scaleY: [0, 1, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
             />

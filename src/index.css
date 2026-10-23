@@ -3,33 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #0a0a0a;
-  --color-bg-elevated: #111111;
-  --color-bg-surface: #171717;
-  --color-text-primary: #f5f5f5;
-  --color-text-secondary: #999999;
-  --color-text-tertiary: #666666;
-  --color-border: #222222;
-  --color-border-hover: #383838;
-  --color-electric: #0066ff;
-  --color-electric-light: #3385ff;
-  --color-electric-dark: #0044cc;
-  --color-electric-glow: rgba(0, 102, 255, 0.22);
+  /* Midnight + Arctic Blue — dark mode */
+  --color-bg: #0d1117;
+  --color-bg-elevated: #161b22;
+  --color-bg-surface: #1c2128;
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-tertiary: #555f69;
+  --color-border: #21262d;
+  --color-border-hover: #30363d;
+  --color-electric: #38bdf8;
+  --color-electric-light: #7dd3fc;
+  --color-electric-dark: #0ea5e9;
+  --color-electric-glow: rgba(56, 189, 248, 0.18);
 }
 
 .light {
-  --color-bg: #f8f8fa;
+  /* Midnight + Arctic Blue — light mode */
+  --color-bg: #f0f6fc;
   --color-bg-elevated: #ffffff;
-  --color-bg-surface: #f1f2f5;
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #475569;
-  --color-text-tertiary: #64748b;
-  --color-border: #e2e8f0;
-  --color-border-hover: #cbd5e1;
-  --color-electric: #0052cc;
-  --color-electric-light: #2563eb;
-  --color-electric-dark: #1d4ed8;
-  --color-electric-glow: rgba(0, 82, 204, 0.15);
+  --color-bg-surface: #e8f0f8;
+  --color-text-primary: #0d1117;
+  --color-text-secondary: #3d444d;
+  --color-text-tertiary: #57606a;
+  --color-border: #d0d7de;
+  --color-border-hover: #b0bbc5;
+  --color-electric: #0284c7;
+  --color-electric-light: #0ea5e9;
+  --color-electric-dark: #0369a1;
+  --color-electric-glow: rgba(2, 132, 199, 0.15);
 }
 
 /* Custom Scrollbar */
@@ -64,14 +66,14 @@ body {
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
 }
 
 .light .bg-grid-pattern {
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
 }
 
 /* Custom noise overlay */

@@ -21,7 +21,7 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-2">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#38bdf8]">
             04 // Research & Publications
           </span>
         </div>
@@ -38,7 +38,7 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 group relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#0066ff]/50 hover:bg-[var(--color-bg-surface)] flex flex-col justify-between"
+            className="lg:col-span-2 group relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#38bdf8]/50 hover:bg-[var(--color-bg-surface)] flex flex-col justify-between"
           >
             {/* Conference Photo Banner — shown at top of card when image is available */}
             {PUBLICATION.image && (
@@ -57,14 +57,14 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
               className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
               style={{
                 background:
-                  'radial-gradient(ellipse at 50% 0%, rgba(0, 102, 255, 0.15), transparent 70%)',
+                  'radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.15), transparent 70%)',
               }}
             />
 
             <div className={PUBLICATION.image ? 'pt-28 relative' : 'relative'}>
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0066ff]/15 px-3 py-1 font-mono text-xs font-semibold text-[#0066ff] border border-[#0066ff]/30">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#38bdf8]/15 px-3 py-1 font-mono text-xs font-semibold text-[#38bdf8] border border-[#38bdf8]/30">
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>Conference Paper</span>
                   </span>
@@ -78,31 +78,31 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
                     onClick={onOpenPhotoGuidance}
                     className="flex items-center gap-1 rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[10px] text-[#888888] hover:text-white"
                   >
-                    <ImageIcon className="w-3 h-3 text-[#0066ff]" />
+                    <ImageIcon className="w-3 h-3 text-[#38bdf8]" />
                     <span>Photo Slot</span>
                   </button>
                 )}
               </div>
 
               {/* Title */}
-              <h3 className="font-clash text-xl sm:text-2xl font-bold tracking-tight text-[var(--color-text-primary)] leading-snug group-hover:text-[#0066ff] transition-colors">
+              <h3 className="font-clash text-xl sm:text-2xl font-bold tracking-tight text-[var(--color-text-primary)] leading-snug group-hover:text-[#38bdf8] transition-colors">
                 {PUBLICATION.title}
               </h3>
 
               {/* Author & Venue */}
               <div className="mt-3 flex flex-wrap items-center gap-2 font-mono text-xs text-[var(--color-text-secondary)]">
-                <span className="font-semibold text-[var(--color-text-primary)] underline decoration-[#0066ff]">
+                <span className="font-semibold text-[var(--color-text-primary)] underline decoration-[#38bdf8]">
                   {PUBLICATION.authors}
                 </span>
                 <span>•</span>
-                <span className="text-[#0066ff] font-medium">{PUBLICATION.venue}</span>
+                <span className="text-[#38bdf8] font-medium">{PUBLICATION.venue}</span>
                 <span>•</span>
                 <span>{PUBLICATION.location}</span>
               </div>
 
               {/* Abstract */}
               <div className="mt-5 rounded-2xl border border-[var(--color-border)]/60 bg-[var(--color-bg)]/60 p-4 md:p-5">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-[#0066ff] block mb-2">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#38bdf8] block mb-2">
                   Abstract Overview
                 </span>
                 <p className="font-sans text-xs md:text-sm text-[var(--color-text-secondary)] leading-relaxed">
@@ -127,7 +127,7 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
             <div className="mt-8 pt-4 border-t border-[var(--color-border)]/50 flex flex-wrap items-center justify-between gap-4">
               <button
                 onClick={handleCopyCitation}
-                className="flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] px-3.5 py-2 font-mono text-xs text-[var(--color-text-secondary)] hover:text-white hover:border-[#0066ff] transition-colors"
+                className="flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] px-3.5 py-2 font-mono text-xs text-[var(--color-text-secondary)] hover:text-white hover:border-[#38bdf8] transition-colors"
               >
                 {copiedCitation ? (
                   <>
@@ -154,20 +154,20 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15, duration: 0.6 }}
-            className="group relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#0066ff]/50 hover:bg-[var(--color-bg-surface)] flex flex-col justify-between"
+            className="group relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#38bdf8]/50 hover:bg-[var(--color-bg-surface)] flex flex-col justify-between"
           >
             {/* Top Glow */}
             <div
               className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
               style={{
                 background:
-                  'radial-gradient(ellipse at 50% 0%, rgba(0, 102, 255, 0.15), transparent 70%)',
+                  'radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.15), transparent 70%)',
               }}
             />
 
             <div>
               <div className="flex items-center justify-between gap-2 mb-4">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0066ff]/15 px-3 py-1 font-mono text-xs font-semibold text-[#0066ff] border border-[#0066ff]/30">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#38bdf8]/15 px-3 py-1 font-mono text-xs font-semibold text-[#38bdf8] border border-[#38bdf8]/30">
                   <Mic className="w-3.5 h-3.5" />
                   <span>Invited Keynote</span>
                 </span>
@@ -176,13 +176,13 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
                 </span>
               </div>
 
-              <h3 className="font-clash text-xl font-bold tracking-tight text-[var(--color-text-primary)] leading-snug group-hover:text-[#0066ff] transition-colors">
+              <h3 className="font-clash text-xl font-bold tracking-tight text-[var(--color-text-primary)] leading-snug group-hover:text-[#38bdf8] transition-colors">
                 "{INVITED_TALK.title}"
               </h3>
 
               <div className="mt-4 space-y-2 font-sans text-xs text-[var(--color-text-secondary)]">
                 <div>
-                  <span className="font-mono text-[10px] uppercase text-[#0066ff] block">
+                  <span className="font-mono text-[10px] uppercase text-[#38bdf8] block">
                     Host Organization
                   </span>
                   <span className="text-[var(--color-text-primary)] font-medium">
@@ -191,14 +191,14 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
                 </div>
 
                 <div>
-                  <span className="font-mono text-[10px] uppercase text-[#0066ff] block">
+                  <span className="font-mono text-[10px] uppercase text-[#38bdf8] block">
                     Joint Collaboration
                   </span>
                   <span>{INVITED_TALK.collaborators}</span>
                 </div>
 
                 <div className="pt-2">
-                  <span className="font-mono text-[10px] uppercase text-[#0066ff] block">
+                  <span className="font-mono text-[10px] uppercase text-[#38bdf8] block">
                     Talk Core Focus
                   </span>
                   <p className="leading-relaxed text-[var(--color-text-secondary)]">
@@ -210,7 +210,7 @@ export const PublicationsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
 
             <div className="mt-8 pt-4 border-t border-[var(--color-border)]/50 flex items-center justify-between text-xs font-mono text-[var(--color-text-tertiary)]">
               <span>IEEE Joint Chapter</span>
-              <span className="text-[#0066ff]">Speaker</span>
+              <span className="text-[#38bdf8]">Speaker</span>
             </div>
           </motion.div>
         </div>

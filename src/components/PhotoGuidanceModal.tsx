@@ -76,7 +76,7 @@ export const PhotoGuidanceModal: React.FC<PhotoGuidanceModalProps> = ({ isOpen, 
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-4 mb-6">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0066ff]/20 text-[#0066ff]">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#38bdf8]/20 text-[#38bdf8]">
               <ImageIcon className="w-5 h-5" />
             </div>
             <div>
@@ -107,7 +107,7 @@ export const PhotoGuidanceModal: React.FC<PhotoGuidanceModalProps> = ({ isOpen, 
           {photoSlots.map((slot, idx) => (
             <div
               key={idx}
-              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)]/80 p-4 transition-colors hover:border-[#0066ff]/40"
+              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)]/80 p-4 transition-colors hover:border-[#38bdf8]/40"
             >
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span className="font-clash text-sm font-semibold text-[var(--color-text-primary)]">
@@ -117,7 +117,7 @@ export const PhotoGuidanceModal: React.FC<PhotoGuidanceModalProps> = ({ isOpen, 
                   className={`rounded-full px-2.5 py-0.5 font-mono text-[10px] ${
                     slot.currentStatus === 'Active'
                       ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                      : 'bg-[#0066ff]/10 text-[#0066ff] border border-[#0066ff]/20'
+                      : 'bg-[#38bdf8]/10 text-[#38bdf8] border border-[#38bdf8]/20'
                   }`}
                 >
                   {slot.currentStatus}
@@ -129,7 +129,7 @@ export const PhotoGuidanceModal: React.FC<PhotoGuidanceModalProps> = ({ isOpen, 
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-[var(--color-border)]/40 font-mono text-[11px] text-[var(--color-text-tertiary)]">
-                <span>Location: <code className="text-[#0066ff]">{slot.location}</code></span>
+                <span>Location: <code className="text-[#38bdf8]">{slot.location}</code></span>
                 <span>Aspect: {slot.aspectRatio}</span>
               </div>
             </div>
@@ -140,7 +140,7 @@ export const PhotoGuidanceModal: React.FC<PhotoGuidanceModalProps> = ({ isOpen, 
         <div className="mt-8 flex justify-end">
           <button
             onClick={onClose}
-            className="rounded-xl bg-[#0066ff] px-5 py-2 font-mono text-xs font-medium text-white shadow-lg shadow-[#0066ff]/25 hover:bg-[#0052cc]"
+            className="rounded-xl bg-[#38bdf8] px-5 py-2 font-mono text-xs font-medium text-[#0d1117] shadow-lg shadow-[#38bdf8]/25 hover:bg-[#7dd3fc]"
           >
             Got it, Close Guide
           </button>

@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             aria-label="Back to top"
             className="group text-left focus:outline-none"
           >
-            <span className="block font-clash text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[0.95] tracking-tighter text-[var(--color-text-primary)] transition-colors duration-500 group-hover:text-[#0066ff]">
+            <span className="block font-clash text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[0.95] tracking-tighter text-[var(--color-text-primary)] transition-colors duration-500 group-hover:text-[#38bdf8]">
               Back to top
             </span>
           </button>
@@ -46,8 +46,8 @@ export const Footer: React.FC = () => {
             aria-label="Back to top"
             className="group mb-2 hidden md:block focus:outline-none"
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[var(--color-border)] transition-all duration-500 group-hover:border-[#0066ff] group-hover:bg-[#0066ff]/10">
-              <ArrowUp className="h-5 w-5 text-[var(--color-text-secondary)] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#0066ff]" />
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[var(--color-border)] transition-all duration-500 group-hover:border-[#38bdf8] group-hover:bg-[#38bdf8]/10">
+              <ArrowUp className="h-5 w-5 text-[var(--color-text-secondary)] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#38bdf8]" />
             </div>
           </button>
         </div>

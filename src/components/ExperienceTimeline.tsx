@@ -16,7 +16,7 @@ export const ExperienceTimeline: React.FC = () => {
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-2">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#38bdf8]">
             05 // Experience & Leadership
           </span>
         </div>
@@ -32,7 +32,7 @@ export const ExperienceTimeline: React.FC = () => {
               onClick={() => setActiveTab('all')}
               className={`rounded-full px-4 py-1.5 font-mono text-xs transition-colors ${
                 activeTab === 'all'
-                  ? 'bg-[#0066ff] text-white shadow-sm'
+                  ? 'bg-[#38bdf8] text-white shadow-sm'
                   : 'text-[var(--color-text-secondary)] hover:text-white'
               }`}
             >
@@ -42,7 +42,7 @@ export const ExperienceTimeline: React.FC = () => {
               onClick={() => setActiveTab('internship')}
               className={`rounded-full px-4 py-1.5 font-mono text-xs transition-colors ${
                 activeTab === 'internship'
-                  ? 'bg-[#0066ff] text-white shadow-sm'
+                  ? 'bg-[#38bdf8] text-white shadow-sm'
                   : 'text-[var(--color-text-secondary)] hover:text-white'
               }`}
             >
@@ -52,7 +52,7 @@ export const ExperienceTimeline: React.FC = () => {
               onClick={() => setActiveTab('leadership')}
               className={`rounded-full px-4 py-1.5 font-mono text-xs transition-colors ${
                 activeTab === 'leadership'
-                  ? 'bg-[#0066ff] text-white shadow-sm'
+                  ? 'bg-[#38bdf8] text-white shadow-sm'
                   : 'text-[var(--color-text-secondary)] hover:text-white'
               }`}
             >
@@ -73,7 +73,7 @@ export const ExperienceTimeline: React.FC = () => {
               className="relative flex items-start gap-4 md:gap-8 group"
             >
               {/* Timeline Indicator Dot */}
-              <div className="relative z-10 flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-full border-2 border-[var(--color-border)] bg-[var(--color-bg)] text-[#0066ff] group-hover:border-[#0066ff] group-hover:scale-110 transition-all">
+              <div className="relative z-10 flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-full border-2 border-[var(--color-border)] bg-[var(--color-bg)] text-[#38bdf8] group-hover:border-[#38bdf8] group-hover:scale-110 transition-all">
                 {item.type === 'internship' ? (
                   <Briefcase className="w-3.5 h-3.5" />
                 ) : (
@@ -82,15 +82,15 @@ export const ExperienceTimeline: React.FC = () => {
               </div>
 
               {/* Card */}
-              <div className="flex-1 rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-300 hover:border-[#0066ff]/40 hover:bg-[var(--color-bg-surface)]">
+              <div className="flex-1 rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-300 hover:border-[#38bdf8]/40 hover:bg-[var(--color-bg-surface)]">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
                   <div>
                     <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-clash text-lg md:text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[#0066ff] transition-colors">
+                      <h3 className="font-clash text-lg md:text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[#38bdf8] transition-colors">
                         {item.role}
                       </h3>
                       {item.badge && (
-                        <span className="rounded-full bg-[#0066ff]/15 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-[#0066ff] border border-[#0066ff]/30">
+                        <span className="rounded-full bg-[#38bdf8]/15 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-[#38bdf8] border border-[#38bdf8]/30">
                           {item.badge}
                         </span>
                       )}
@@ -102,7 +102,7 @@ export const ExperienceTimeline: React.FC = () => {
 
                   <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-[var(--color-text-tertiary)]">
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-[#0066ff]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#38bdf8]" />
                       {item.period}
                     </span>
                     <span className="flex items-center gap-1">
@@ -116,7 +116,7 @@ export const ExperienceTimeline: React.FC = () => {
                 <ul className="mt-4 space-y-2 border-t border-[var(--color-border)]/50 pt-3">
                   {item.highlights.map((h, hIdx) => (
                     <li key={hIdx} className="flex items-start gap-2.5 font-sans text-xs md:text-sm text-[var(--color-text-secondary)]">
-                      <CheckCircle2 className="w-4 h-4 text-[#0066ff] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
                   ))}

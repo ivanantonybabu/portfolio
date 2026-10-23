@@ -81,7 +81,7 @@ export const BackgroundCanvas: React.FC<{ isDark?: boolean }> = ({ isDark = true
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = isDark ? `rgba(0, 102, 255, ${alpha})` : `rgba(0, 82, 204, ${alpha})`;
+            ctx.strokeStyle = isDark ? `rgba(56, 189, 248, ${alpha})` : `rgba(2, 132, 199, ${alpha})`;
             ctx.lineWidth = 0.75;
             ctx.stroke();
           }
@@ -119,15 +119,15 @@ export const BackgroundCanvas: React.FC<{ isDark?: boolean }> = ({ isDark = true
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = isDark
-          ? `rgba(0, 102, 255, ${finalAlpha})`
-          : `rgba(0, 82, 204, ${finalAlpha * 0.8})`;
+          ? `rgba(56, 189, 248, ${finalAlpha})`
+          : `rgba(2, 132, 199, ${finalAlpha * 0.8})`;
         ctx.fill();
 
         // Subtle glow on larger particles
         if (p.radius > 1.8 && isDark) {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius * 2.5, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(0, 102, 255, ${finalAlpha * 0.25})`;
+          ctx.fillStyle = `rgba(56, 189, 248, ${finalAlpha * 0.25})`;
           ctx.fill();
         }
       }

@@ -21,7 +21,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="flex items-end justify-between mb-2">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#38bdf8]">
             03 // Selected Engineering Projects
           </span>
         </div>
@@ -38,8 +38,8 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                 onClick={() => setActiveFilter(cat)}
                 className={`rounded-full px-3.5 py-1.5 font-mono text-xs transition-all duration-300 ${
                   activeFilter === cat
-                    ? 'bg-[#0066ff] text-white shadow-[0_0_15px_rgba(0,102,255,0.4)]'
-                    : 'border border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:border-[#0066ff]/40 hover:text-white'
+                    ? 'bg-[#38bdf8] text-[#0d1117] font-semibold shadow-[0_0_18px_rgba(56,189,248,0.4)]'
+                    : 'border border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:border-[#38bdf8]/50 hover:text-[#38bdf8]'
                 }`}
               >
                 {cat}
@@ -61,7 +61,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.5 }}
-                className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#0066ff]/50 hover:bg-[var(--color-bg-surface)] ${spanClass}`}
+                className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 transition-all duration-500 hover:border-[#38bdf8]/50 hover:bg-[var(--color-bg-surface)] ${spanClass}`}
               >
                 {/* Background Photo (when provided) */}
                 {project.image && (
@@ -80,7 +80,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                   style={{
                     background:
-                      'radial-gradient(ellipse at 80% 80%, rgba(0, 102, 255, 0.12), transparent 70%)',
+                      'radial-gradient(ellipse at 80% 80%, rgba(56, 189, 248, 0.12), transparent 70%)',
                   }}
                 />
 
@@ -88,7 +88,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                   {/* Top Bar: Category & Links */}
                   <div className="flex items-center justify-between gap-2 mb-4">
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs uppercase tracking-wider text-[#0066ff]">
+                      <span className="font-mono text-xs uppercase tracking-wider text-[#38bdf8]">
                         {project.category}
                       </span>
                       <span className="font-mono text-xs text-[var(--color-text-tertiary)]">•</span>
@@ -107,7 +107,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                           className="flex items-center gap-1 rounded-full border border-white/10 bg-black/40 px-2 py-0.5 font-mono text-[10px] text-[#888888] hover:text-white transition-colors"
                           title={project.photoPlaceholderNote}
                         >
-                          <ImageIcon className="w-2.5 h-2.5 text-[#0066ff]" />
+                          <ImageIcon className="w-2.5 h-2.5 text-[#38bdf8]" />
                           <span className="hidden sm:inline">Photo Slot</span>
                         </button>
                       )}
@@ -117,7 +117,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                           href={project.githubUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="p-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text-secondary)] hover:text-white hover:border-[#0066ff] transition-colors"
+                          className="p-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text-secondary)] hover:text-white hover:border-[#38bdf8] transition-colors"
                           aria-label="View on GitHub"
                           onClick={(e) => e.stopPropagation()}
                         >
@@ -128,10 +128,10 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="font-clash text-xl md:text-2xl font-bold tracking-tight text-[var(--color-text-primary)] group-hover:text-[#0066ff] transition-colors">
+                  <h3 className="font-clash text-xl md:text-2xl font-bold tracking-tight text-[var(--color-text-primary)] group-hover:text-[#38bdf8] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="mt-1 font-mono text-xs text-[#0066ff]/80">
+                  <p className="mt-1 font-mono text-xs text-[#38bdf8]/80">
                     {project.subtitle}
                   </p>
 
@@ -145,7 +145,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                     <ul className="mt-4 space-y-1.5 border-t border-[var(--color-border)]/50 pt-3">
                       {project.highlights.slice(0, 3).map((h, hIdx) => (
                         <li key={hIdx} className="flex items-start gap-2 font-sans text-xs text-[var(--color-text-secondary)]">
-                          <span className="text-[#0066ff] mt-0.5">•</span>
+                          <span className="text-[#38bdf8] mt-0.5">•</span>
                           <span>{h}</span>
                         </li>
                       ))}
@@ -173,7 +173,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="font-mono text-xs text-[#0066ff] hover:underline flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                    className="font-mono text-xs text-[#38bdf8] hover:underline flex items-center gap-1 group-hover:translate-x-1 transition-transform"
                   >
                     <span>Inspect</span>
                     <span>→</span>
@@ -198,13 +198,13 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text-secondary)] hover:text-white hover:border-[#0066ff]"
+                className="absolute top-6 right-6 p-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text-secondary)] hover:text-white hover:border-[#38bdf8]"
               >
                 <X className="w-4 h-4" />
               </button>
 
               <div className="flex items-center gap-3 mb-2">
-                <span className="font-mono text-xs uppercase tracking-wider text-[#0066ff]">
+                <span className="font-mono text-xs uppercase tracking-wider text-[#38bdf8]">
                   {selectedProject.category}
                 </span>
                 <span className="font-mono text-xs text-[var(--color-text-tertiary)]">•</span>
@@ -216,7 +216,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
               <h2 className="font-clash text-2xl md:text-3xl font-bold tracking-tight text-[var(--color-text-primary)]">
                 {selectedProject.title}
               </h2>
-              <p className="mt-1 font-mono text-xs text-[#0066ff]">
+              <p className="mt-1 font-mono text-xs text-[#38bdf8]">
                 {selectedProject.subtitle}
               </p>
 
@@ -226,8 +226,8 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
 
               {/* Photo guide notice in modal */}
               {selectedProject.photoPlaceholderNote && (
-                <div className="mt-4 rounded-xl border border-dashed border-[#0066ff]/40 bg-[#0066ff]/5 p-4 text-xs font-mono text-[var(--color-text-secondary)]">
-                  <div className="flex items-center gap-2 text-[#0066ff] font-semibold mb-1">
+                <div className="mt-4 rounded-xl border border-dashed border-[#38bdf8]/40 bg-[#38bdf8]/5 p-4 text-xs font-mono text-[var(--color-text-secondary)]">
+                  <div className="flex items-center gap-2 text-[#38bdf8] font-semibold mb-1">
                     <ImageIcon className="w-4 h-4" />
                     <span>Photo Placeholder Notice</span>
                   </div>
@@ -243,7 +243,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                 <div className="space-y-2">
                   {selectedProject.highlights.map((h, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-xs text-[var(--color-text-secondary)]">
-                      <CheckCircle2 className="w-4 h-4 text-[#0066ff] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -274,7 +274,7 @@ export const ProjectsSection: React.FC<{ onOpenPhotoGuidance?: () => void }> = (
                     href={selectedProject.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#0066ff] px-5 py-2.5 font-mono text-xs font-medium text-white shadow-lg shadow-[#0066ff]/30 hover:bg-[#0055dd] transition-colors"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#38bdf8] px-5 py-2.5 font-mono text-xs font-medium text-[#0d1117] shadow-lg shadow-[#38bdf8]/30 hover:bg-[#7dd3fc] transition-colors"
                   >
                     <Github className="w-4 h-4" />
                     <span>View Repository</span>

@@ -11,7 +11,7 @@ interface AchievementCardProps {
 
 const AchievementCard: React.FC<AchievementCardProps> = ({ item, onOpenPhotoGuidance }) => (
   <div
-    className="group relative flex h-[220px] w-[280px] sm:w-[310px] flex-shrink-0 flex-col justify-end overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 transition-all duration-500 hover:border-[#0066ff]/50 hover:bg-[var(--color-bg-surface)] cursor-default"
+    className="group relative flex h-[220px] w-[280px] sm:w-[310px] flex-shrink-0 flex-col justify-end overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 transition-all duration-500 hover:border-[#38bdf8]/50 hover:bg-[var(--color-bg-surface)] cursor-default"
   >
     {/* Background Photo */}
     {item.image && (
@@ -33,7 +33,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({ item, onOpenPhotoGuid
 
     {/* Award icon watermark (hidden when photo present) */}
     {!item.image && (
-      <div className="absolute top-5 right-5 text-white/5 group-hover:text-[#0066ff]/20 transition-colors duration-500">
+      <div className="absolute top-5 right-5 text-white/5 group-hover:text-[#38bdf8]/20 transition-colors duration-500">
         <Award className="w-14 h-14 stroke-1" />
       </div>
     )}
@@ -45,13 +45,13 @@ const AchievementCard: React.FC<AchievementCardProps> = ({ item, onOpenPhotoGuid
         className="absolute top-3.5 left-3.5 z-20 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/40 px-2 py-0.5 font-mono text-[9px] text-[#888] backdrop-blur hover:text-white transition-colors"
         title={item.photoPlaceholderNote}
       >
-        <ImageIcon className="w-2.5 h-2.5 text-[#0066ff]" />
+        <ImageIcon className="w-2.5 h-2.5 text-[#38bdf8]" />
         <span>Photo Slot</span>
       </button>
     )}
 
     {/* Metric */}
-    <span className="relative z-10 font-clash text-3xl sm:text-4xl font-bold leading-none text-[var(--color-text-primary)] transition-colors duration-400 group-hover:text-[#0066ff]">
+    <span className="relative z-10 font-clash text-3xl sm:text-4xl font-bold leading-none text-[var(--color-text-primary)] transition-colors duration-400 group-hover:text-[#38bdf8]">
       {item.metric}
     </span>
 
@@ -60,7 +60,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({ item, onOpenPhotoGuid
       <span className="block font-clash text-sm font-semibold text-[var(--color-text-primary)]">
         {item.label}
       </span>
-      <span className="mt-0.5 block font-mono text-xs text-[#0066ff]">
+      <span className="mt-0.5 block font-mono text-xs text-[#38bdf8]">
         {item.organization}
       </span>
       <p className="mt-1 font-sans text-[11px] text-[var(--color-text-tertiary)] line-clamp-2 leading-relaxed">
@@ -70,8 +70,8 @@ const AchievementCard: React.FC<AchievementCardProps> = ({ item, onOpenPhotoGuid
 
     {/* Corner bracket accent */}
     <div className="absolute right-5 top-5 h-7 w-7 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none">
-      <div className="absolute right-0 top-0 h-full w-px bg-[#0066ff]/40" />
-      <div className="absolute right-0 top-0 h-px w-full bg-[#0066ff]/40" />
+      <div className="absolute right-0 top-0 h-full w-px bg-[#38bdf8]/40" />
+      <div className="absolute right-0 top-0 h-px w-full bg-[#38bdf8]/40" />
     </div>
   </div>
 );
@@ -95,7 +95,7 @@ export const AchievementsSection: React.FC<{ onOpenPhotoGuidance?: () => void }>
         className="px-4 md:px-8 lg:px-12 mb-10"
       >
         <div className="flex items-center gap-4">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#38bdf8]">
             Key Milestones &amp; Honours
           </span>
           <span className="h-px flex-1 bg-[var(--color-border)]" />
