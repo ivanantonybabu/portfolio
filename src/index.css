@@ -79,10 +79,10 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
-/* Smooth marquee animation */
+/* Smooth marquee animation — forward (left) and reverse (right) */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
 }
 
 .animate-marquee {
@@ -93,6 +93,21 @@ body {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* Pause-on-hover for MarqueeTrack component */
+.marquee-track {
+  will-change: transform;
+}
+.group\/marquee:hover .marquee-track,
+.overflow-hidden:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Fade edges left/right */
+.marquee-fade-left {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 
 /* Custom cursor hide default only when custom cursor active */

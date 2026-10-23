@@ -2,103 +2,126 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
 
+/* ─── single skill pill ─────────────────────────────────────────── */
+const SkillPill: React.FC<{ skill: string; highlight?: boolean }> = ({ skill, highlight }) => (
+  <span
+    className={`flex-shrink-0 rounded-full border px-4 py-2 font-mono text-xs transition-all duration-300 select-none cursor-default
+      ${highlight
+        ? 'border-[#0066ff]/60 bg-[#0066ff]/10 text-[#0066ff]'
+        : 'border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:border-[#0066ff]/60 hover:text-[#0066ff] hover:bg-[#0066ff]/10'
+      }`}
+  >
+    {skill}
+  </span>
+);
+
+/* ─── category label chip ───────────────────────────────────────── */
+const CategoryChip: React.FC<{ symbol: string; title: string }> = ({ symbol, title }) => (
+  <span className="flex-shrink-0 flex items-center gap-1.5 rounded-full border border-[#0066ff]/40 bg-[#0066ff]/10 px-4 py-2 font-mono text-xs font-semibold text-[#0066ff] select-none cursor-default">
+    <span>{symbol}</span>
+    <span>{title}</span>
+  </span>
+);
+
+/* ─── section ───────────────────────────────────────────────────── */
 export const SkillsSection: React.FC = () => {
+  // Speeds alternated per row — different drift gives layered feel
+  const rowSpeeds = [42, 36, 48, 34];
+  // Odd rows go left, even rows go right
+  const rowDirections: Array<'normal' | 'reverse'> = ['normal', 'reverse', 'normal', 'reverse'];
+
   return (
-    <section id="skills" className="relative py-20 px-4 md:px-8 lg:px-12 border-t border-[var(--color-border)]">
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="mb-2">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
-            02 // Technical Skills & Stack
-          </span>
-        </div>
-        <div className="mb-12">
-          <h2 className="font-clash text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[var(--color-text-primary)] max-w-3xl">
-            From Silicon & Transceivers to Autonomous Algorithms
-          </h2>
-        </div>
+    <section id="skills" className="relative py-20 border-t border-[var(--color-border)] overflow-hidden">
+      {/* ── Header ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.55 }}
+        className="px-4 md:px-8 lg:px-12 mb-12"
+      >
+        <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066ff]">
+          02 // Technical Skills &amp; Stack
+        </span>
+        <h2 className="mt-4 font-clash text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[var(--color-text-primary)] max-w-3xl">
+          From Silicon &amp; Transceivers to Autonomous Algorithms
+        </h2>
+        <p className="mt-3 font-sans text-sm text-[var(--color-text-secondary)] max-w-xl">
+          Hover any row to pause · each track scrolls at its own pace
+        </p>
+      </motion.div>
 
-        {/* 4 Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SKILL_CATEGORIES.map((cat, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 transition-all duration-500 hover:border-[#0066ff]/40 hover:bg-[var(--color-bg-surface)] flex flex-col justify-between"
-            >
-              {/* Radial gradient hover glow */}
-              <div
-                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                style={{
-                  background:
-                    'radial-gradient(ellipse at 50% 0%, rgba(0, 102, 255, 0.18), transparent 70%)',
-                }}
-              />
+      {/* ── Marquee rows — one per skill category ── */}
+      <div className="flex flex-col gap-4">
+        {SKILL_CATEGORIES.map((cat, idx) => {
+          // Build pill list: category chip first, then skills
+          const items = cat.skills;
+          const speed = rowSpeeds[idx] ?? 40;
+          const direction = rowDirections[idx] ?? 'normal';
 
-              <div>
-                <h3 className="relative z-10 mb-5 flex items-center gap-2 font-clash text-lg font-semibold tracking-tight text-[var(--color-text-primary)]">
-                  <span className="text-[#0066ff] text-base">{cat.symbol}</span>
-                  <span>{cat.title}</span>
-                </h3>
-
-                {/* Skill Pills */}
-                <div className="relative z-10 flex flex-wrap gap-2">
-                  {cat.skills.map((skill, sIdx) => (
-                    <span
-                      key={sIdx}
-                      className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg)]/80 px-3 py-1.5 font-mono text-xs text-[var(--color-text-secondary)] transition-all duration-300 hover:border-[#0066ff] hover:text-[#0066ff] hover:bg-[#0066ff]/10 cursor-default select-none"
-                    >
-                      {skill}
-                    </span>
+          return (
+            <div key={idx} className="marquee-fade-left">
+              <div className="overflow-hidden w-full">
+                <div
+                  className="flex gap-3 w-max"
+                  style={{ animation: `marquee ${speed}s linear infinite ${direction}` }}
+                  onMouseEnter={e => (e.currentTarget.style.animationPlayState = 'paused')}
+                  onMouseLeave={e => (e.currentTarget.style.animationPlayState = 'running')}
+                >
+                  {/* Triple repeat for seamless loop */}
+                  {[0, 1, 2].map(copy => (
+                    <React.Fragment key={copy}>
+                      {/* Category label injected at start of each copy */}
+                      <CategoryChip symbol={cat.symbol} title={cat.title} />
+                      {/* Thin divider */}
+                      <span className="flex-shrink-0 self-center h-4 w-px bg-[var(--color-border)]" />
+                      {items.map((skill, sIdx) => (
+                        <SkillPill key={`${copy}-${sIdx}`} skill={skill} highlight={sIdx === 0} />
+                      ))}
+                      {/* Gap between copies */}
+                      <span className="flex-shrink-0 w-8" />
+                    </React.Fragment>
                   ))}
                 </div>
               </div>
-
-              {/* Bottom detail row */}
-              <div className="relative z-10 mt-8 pt-4 border-t border-[var(--color-border)]/50 flex items-center justify-between text-[11px] font-mono text-[var(--color-text-tertiary)]">
-                <span>Domain {idx + 1}</span>
-                <span className="text-[#0066ff] group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Additional Languages & Tools Banner */}
-        <div className="mt-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-1">
-            <span className="font-mono text-xs uppercase tracking-wider text-[#0066ff]">
-              Operating Systems & Languages
-            </span>
-            <div className="flex flex-wrap gap-2 pt-1 font-clash text-sm font-medium text-[var(--color-text-primary)]">
-              <span>Linux (Ubuntu/Debian)</span>
-              <span className="text-[#0066ff]">•</span>
-              <span>Windows</span>
-              <span className="text-[#0066ff]">•</span>
-              <span>Python</span>
-              <span className="text-[#0066ff]">•</span>
-              <span>C++</span>
-              <span className="text-[#0066ff]">•</span>
-              <span>C</span>
-              <span className="text-[#0066ff]">•</span>
-              <span>Java</span>
             </div>
-          </div>
-
-          <div className="space-y-1">
-            <span className="font-mono text-xs uppercase tracking-wider text-[#0066ff]">
-              Linguistic Proficiency
-            </span>
-            <div className="flex flex-wrap gap-2 pt-1 font-mono text-xs text-[var(--color-text-secondary)]">
-              <span>English (Professional)</span>
-              <span className="text-[#0066ff]">•</span>
-              <span>Malayalam (Bilingual / Native)</span>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
+
+      {/* ── Bottom info bar ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mx-4 md:mx-8 lg:mx-12 mt-10 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+      >
+        <div className="space-y-1">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#0066ff]">
+            Languages &amp; Operating Systems
+          </span>
+          <div className="flex flex-wrap gap-2 pt-1 font-clash text-sm font-medium text-[var(--color-text-primary)]">
+            <span>Python</span><span className="text-[#0066ff]">•</span>
+            <span>C++</span><span className="text-[#0066ff]">•</span>
+            <span>C</span><span className="text-[#0066ff]">•</span>
+            <span>Java</span><span className="text-[#0066ff]">•</span>
+            <span>Linux (Ubuntu/Debian)</span><span className="text-[#0066ff]">•</span>
+            <span>Windows</span>
+          </div>
+        </div>
+
+        <div className="space-y-1">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#0066ff]">
+            Linguistic Proficiency
+          </span>
+          <div className="flex flex-wrap gap-2 pt-1 font-mono text-xs text-[var(--color-text-secondary)]">
+            <span>English (Professional)</span>
+            <span className="text-[#0066ff]">•</span>
+            <span>Malayalam (Bilingual / Native)</span>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };
