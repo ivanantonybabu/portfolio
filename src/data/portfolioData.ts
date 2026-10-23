@@ -314,7 +314,8 @@ export const PUBLICATION = {
   status: "Presented",
   abstract: "GPS signals attenuate severely inside multistory buildings and industrial facilities, causing conventional autonomous mobile robots to lose orientation. This paper presents a resilient, cost-effective indoor localization and mapping framework running entirely on a single-board Raspberry Pi 5. By fusing monocular camera visual odometry, 6-DoF inertial measurements, and lightweight Time-of-Flight (ToF) LiDAR distance ranges, the system suppresses trajectory drift by over 40% compared to standard monocam SLAM while maintaining real-time frame rates and generating high-fidelity 2D occupancy grid maps for navigation.",
   keywords: ["Visual-Inertial SLAM", "ToF LiDAR", "Raspberry Pi 5", "Sensor Fusion", "Indoor Localization", "GPS-Denied Navigation", "ROS"],
-  photoPlaceholderNote: "Add ICTEST conference presentation slide or paper screenshot"
+  photoPlaceholderNote: "Add ICTEST conference presentation slide or paper screenshot",
+  image: undefined as string | undefined
 };
 
 export const EXPERIENCES: ExperienceItem[] = [
